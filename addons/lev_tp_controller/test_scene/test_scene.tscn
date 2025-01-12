@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cceucgdqp50qr"]
+[gd_scene load_steps=6 format=3 uid="uid://cceucgdqp50qr"]
 
 [ext_resource type="Texture2D" uid="uid://dfqy0p2kxshbo" path="res://addons/lev_tp_controller/test_scene/prototype-texture-with-size.png" id="1_qebac"]
+[ext_resource type="PackedScene" uid="uid://bie176nljw0sx" path="res://addons/lev_tp_controller/player.tscn" id="2_hu85b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqb12"]
 albedo_texture = ExtResource("1_qebac")
@@ -25,3 +26,9 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_ofs3j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.324957, 0.945729, 0, -0.945729, 0.324957, 0, 15.5565, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_hu85b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0684996, 0, 0.0416887)
