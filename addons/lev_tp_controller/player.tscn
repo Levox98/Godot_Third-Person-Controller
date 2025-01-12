@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsiwnnonpofdw"]
+
+[ext_resource type="Script" path="res://addons/lev_tp_controller/scripts/player.gd" id="1_cbeec"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_76wc0"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_abqrs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jnea3"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0.152941, 0.0588235, 1)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_cbeec")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_76wc0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_abqrs")
+surface_material_override/0 = SubResource("StandardMaterial3D_jnea3")
